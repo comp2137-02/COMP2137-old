@@ -9,7 +9,8 @@ myhost=$(hostname)
 myip=$(ip a | grep -w inet| awk '{print $2}')
 
 # Output generation using template
-echo "
+cat <<EOF
+
 Report by $mydate
 ---------------
 
@@ -18,5 +19,6 @@ Host: $myhost
 IPs: $myip
 
 ---------------
-"
+
+EOF
 
